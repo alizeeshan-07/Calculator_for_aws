@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Calculator</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- CSS property to create interactive  
+        calculator interface -->
+	<style>
+		.title {
+			margin-bottom: 10px;
+			padding: 5px 0;
+			font-size: 40px;
+			font-weight: bold;
+			text-align: center;
+			color: white;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		input[type=button] {
+			width: 60px;
+			height: 60px;
+			float: left;
+			padding: 0;
+			margin: 5px;
+			margin-left: 12px;
+			box-sizing: border-box;
+			background: #ecedef;
+			border: none;
+			font-size: 30px;
+			line-height: 30px;
+			border-radius: 50%;
+			font-weight: 700;
+			color: #5E5858;
+			cursor: pointer;
+			transition-duration: 0.4s;
+		}
+
+		.submitButton, .logButton {
+			width: 260px;
+			height: 60px;
+			padding: 0;
+			margin: 10px 5px;
+			margin-left: 12px;
+			box-sizing: border-box;
+			background: #ecedef;
+			border: none;
+			font-size: 30px;
+			line-height: 30px;
+			border-radius: 10px;
+			font-weight: 700;
+			color: #5E5858;
+			cursor: pointer;
+		}
+
+		.logButton {
+			margin: auto;
+			align-self: center;
+		}
+
+		input[type=button]:hover, .submitButton:hover, .logButton:hover {
+			background-color: grey; /* Green */
+			color: white;
+		}
+
+		.numPad {
+			padding: 10px 0px;
+		}
+
+		.mainInput {
+			width: 270px;
+			height: 60px;
+			float: left;
+			padding: 0;
+			box-sizing: border-box;
+			border: none;
+			background: none;
+			color: black;
+			text-align: right;
+			font-weight: 700;
+			font-size: 60px;
+			line-height: 60px;
+			margin: 0 25px;
+		}
+
+		.mainOutput {
+			font-size: 24px;
+			font-weight: 550;
+			text-align: center;
+			margin-left: -40px;
+		}
+
+		.mainPanel {
+			border-collapse: separate;
+			border-spacing: 40px;
+			width: 100%;
+			align-self: center;
+			table-layout: fixed;
+		}
+
+		.subPanel {
+			width: 50%;
+		}
+
+		.calculator {
+			background-color: #c0c0c0;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border: 5px solid black;
+			border-radius: 10px;
+		}
+
+		#display {
+			height: 80px;
+			text-align: right;
+			background-color: white;
+			border: 3px solid white;
+			font-size: 26px;
+			left: 2px;
+			top: 2px;
+			color: black;
+		}
+
+		.btnTop {
+			color: white;
+			background-color: #6f6f6f;
+			font-size: 14px;
+			margin: auto;
+			width: 50px;
+			height: 25px;
+		}
+
+		input::-moz-placeholder {
+			opacity: 0;
+		}
+	</style>
+</head>
+
+<body align=center>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<legend>
+				<h1>CALCULATOR</h1>
+			</legend>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<br>
+
+	<table class="mainPanel">
+		<tr>
+			<td style="width:63%">
+				<table class="calculator" border="2" align="right" cellpadding="15" cellspacing="12" bgcolor="#c0c0c0">
+					<tr>
+						<td>
+							<input class="mainInput" type="text" name="Input" id="Input" Size="35" form="Calculator" placeholder="{{entry}}">
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td class="numPad">
+							<form name="Calculator" class="" id="Calculator" />
+							<input type="button" class="num" name="one" style="font-size:30px" value=" 1 " id="1">
+							<input type="button" class="num" name="two" style="font-size:30px" value=" 2 " id="2">
+							<input type="button" class="num" name="three" style="font-size:30px" value=" 3 " id="3">
+							<input type="button" class="num" name="add" style="font-size:30px" value=" + " id="+">
+							<br>
+							<input type="button" class="num" name="four" style="font-size:30px" value=" 4 " id="4">
+							<input type="button" class="num" name="five" style="font-size:30px" value=" 5 " id="5">
+							<input type="button" class="num" name="six" style="font-size:30px" value=" 6 " id="6">
+							<input type="button" class="num" name="minus" style="font-size:30px" value=" - " id="-">
+							<br>
+							<input type="button" class="num" name="seven" style="font-size:30px" value=" 7 " id="7">
+							<input type="button" class="num" name="eight" style="font-size:30px" value=" 8 " id="8">
+							<input type="button" class="num" name="nine" style="font-size:30px" value=" 9 " id="9">
+							<input type="button" class="num" name="mul" style="font-size:30px" value=" * " id="*">
+							<br>
+							<input type="button" name="clear" style="font-size:30px" value=" C ">
+							<input type="button" class="num" name="zero" style="font-size:30px" value=" 0 " id="0">
+							<input type="button" class="num" name="deci" style="font-size:30px" value=" . " id=".">
+							<input type="button" class="num" name="div" style="font-size:30px" value=" / " id="/">
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="/" method="post" id="submit1" name="submit1" />
+							<button class="submitButton" form="submit1" type="submit" name="expression"
+								style="font-size:30px" onclick="this.value = Calculator.Input.value"> = </button>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td  div style = "position:relative; left:100px; top:-50px; ">
+				<h3> Accessed By: {{ip}} </h3>
+				<br>
+				<ol class="center">
+					{% for log1 in logs %}
+					<li>
+						<p>{{log1}}</p>
+					</li>
+					{%endfor%}
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	</form>
+	<form action="/exportLog" method="post" id="submit2" name="submit2" target="_blank"/>
+		<button class="logButton" form="submit2" name="logButton" style="font-size:30px">Export logs</button>
+	</div>
+
+	<script src="{{url_for('static', filename='script.js')}}"></script>
+
+</body>
+
+</html>
