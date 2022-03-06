@@ -3,14 +3,18 @@ from flask import Flask, Response
 from flask_cors import CORS
 from flask import request
 from flask import jsonify
+from flask_session import Session
 from flask import Flask, render_template, request, session
 import time
-import socket
+import os
 
 # Defining the Flask APP and Setting up the
 # Cross-Origin Resource Policy for the web-based front_end
 app = Flask(__name__, static_folder="static")
 CORS(app)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 MAX_LOG_RESULTS = 20
 
@@ -104,3 +108,6 @@ def export_log():
     log_msg = calculator.log
     calculator.local_log_message()
     return Response(log_msg, mimetype="text/plain")
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))

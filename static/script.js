@@ -2,26 +2,8 @@ function getOutput(){
 	return document.getElementById("Input").value;
 }
 
-function calculate() {
-    isOutput = true;
-}
-
-function getFormattedNumber(num){
-	if(num=="-"){
-		return "";
-	}
-	var n = Number(num);
-	var value = n.toLocaleString("en");
-	return value;
-}
-
 function printOutput(num){
-	if(num==""){
-		document.getElementById("Input").value=num;
-	}
-	else{
-		document.getElementById("Input").value=num;
-	}	
+	document.getElementById("Input").value=num;
 }
 
 document.getElementsByName("clear")[0].addEventListener('click', function() {
